@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html ng-app="spaceApp" class="no-js">
+    <title>Price space</title>
+<head>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/slide-them.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/preloader.directives.js"></script>
+    <script src="js/lib/win.size.directives.js"></script>
+    <script src="js/lib/skrollr.min.js"></script>
+    <script src="js/lib/skrollr.directives.js"></script>
+    <script src="js/lib/modernizr.js"></script>
+    <!--<script src="js/lib/browser-warning.auto.js"></script>-->
+    <!--<script src="js/lib/jquery.stellar.js"></script>-->
+    <!--<script src="js/lib/stellar.directives.js"></script>-->
+    <script src="js/script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body data-twttr-rendered="true"  data-preloader>
+
+<!--style="background-image: url({{ template.bg }})"-->
+<!--// MAIN SLID //-->
+<main>
+    <!--// NAVBAR //-->
+    <nav class="nav" ng-controller="menuController">
+        <div ng-repeat="n in names">
+            <a class="navbar-{{n.name}}" ng-class="{ active: isActive(n.name) }" href="#{{n.name}}" title="{{n.name}}" ng-click="goTo(n.name)">{{n.name}}</a>
+        </div>
+    </nav>
+
+    <section ng-controller="slideController">
+        <div class="slide-container" ng-repeat="template in templates | orderBy:'id'">
+            <div class="slide slide-{{template.name}}" id="{{template.name}}"  ng-include="template.url" winsize></div>
+        </div>
+
+      </section>
+
+    <!--<div class="rockets" data-3900="top: 4411px; position: absolute;"  data-3006px="top: 3411px position: absolute;"  data-2971="top: 26px;  position: fixed;" data-1980="top: 26px  position: fixed;"  data-990="top: 26px  position: fixed;" data-0="top: 36px;  position: fixed;"  >-->
+    <section id="rocket">
+        <div class="rockets" data-3790="top: 100%; margin-top: -300px"  data-2660="top: 10%;  margin-top: 0px" data-1980="top: 30%;  margin-top: 0px" data-370="top: 30%; margin-top: 0px "  data-10="top: 25%; margin-top: 0px ">
+            <div class="rocket"></div>
+             <div id="smoke" data-3790="opacity:1;" data-3650="opacity:0;">
+                 <div class="smoke white-01"></div>
+                 <div class="smoke white-02"></div>
+                 <div class="smoke white-03"></div>
+                 <div class="smoke white-04"></div>
+             </div>
+            <div id="fire" data-3790="opacity:0;"  data-3650="opacity:1;">
+                <div class="red flame"></div>
+                <div class="orange flame"></div>
+                <div class="yellow flame"></div>
+                <div class="white flame"></div>
+            </div>
+        </div>
+    </section>
+    <div id="progress" data-0="width:100%;background:hsl(200, 100%, 50%);" data-end="width:0%;background:hsl(920, 100%, 50%);" class="skrollable" ></div>
+</main>
+
+<footer class="text-center">
+</footer>
+
+<div class="preloader">
+    <img src="images/preloader3.gif">
+</div>
+<div class="not-support">
+    <p>Your browser does not support this application!<br> We recommend you Google Chrome:
+        <a href="https://www.google.com/chrome/" target="_blank"><img src="images/chrome.png"></a>
+    </p>
+</div>
+
+</body>
+</html>

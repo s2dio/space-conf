@@ -1,0 +1,483 @@
+.item{
+    position: absolute;
+}
+
+.item-fixed{
+    position: fixed;
+}
+
+/********************Start*********************/
+
+.logo{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 140px;
+    position: absolute;
+    top:200px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-transform: uppercase;
+    border: 5px solid #FFF;
+    padding: 30px;
+    letter-spacing: 20px;
+    white-space: nowrap;
+    width: 910px;
+}
+
+.second-logo{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    top:115px;
+    position: absolute;
+    white-space: nowrap;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.second-logo span.arrow{
+    background: url("../images/begin/arrows.png") 0px 0px no-repeat;
+    display: inline-block;
+    height: 31px;
+    width: 75px;
+}
+
+
+.second-logo span.arrow.left{
+    background-position: 0 5px;
+}
+
+.second-logo span.arrow.right{
+   background-position: 0 -29px;
+}
+
+.mouse{
+    background: url("../images/begin/objects/mouse.png") 0px 0px no-repeat;
+    width: 29px;
+    height: 53px;
+    margin: 0 auto;
+    top: 462px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.start-patform{
+    bottom: 0px;
+    width: 500px;
+    height: 350px;
+    padding: 20px;
+    background: #FFF;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #FFF;
+    color: #545454;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.start-patform-info h2{
+  color: #27344a;
+}
+
+.start-patform-info{
+     float: right;
+     padding: 40px 0 0;
+}
+
+[class*="icon-"] {
+   display: inline-block;
+}
+
+.icon-clock{
+    background: url("../images/begin/objects/time.png") 0 0 no-repeat;
+    width: 29px;
+    height: 28px;
+    position: absolute;
+    top: 13px;
+    left: 20px;
+}
+
+.btn{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    background-color: #fecc4c;
+    padding: 10px 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    border: none;
+    display: block;
+    border-radius: 6px;
+    -webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
+    transition: border .25s linear,color .25s linear,background-color .25s linear;
+    -webkit-font-smoothing: subpixel-antialiased;
+    z-index: 2000;
+    position: relative;
+    margin-top: 30px;
+    text-shadow: 2px 2px 2px #fdac1c;
+    border-bottom: 4px solid #fdac1c;
+}
+
+.btn:hover{
+    background-color: #ffbc58;
+    border-bottom: 4px solid #f5a51c;
+}
+
+.btn.start{
+    padding-left: 60px;
+
+}
+
+.btn.fixed{
+    position: fixed;
+    display: none;
+}
+
+/**************proposes**************/
+
+
+#web{
+    background: url("../images/proposes/objects/web.png") 0 0 scroll  no-repeat;
+    height: 88px;
+    /*width: 1920px;*/
+    width: 137px;
+    top: 155px;
+    left: 0;
+}
+
+#text-opotunities{
+    height: 141px;
+    /*width: 1920px;*/
+    width: auto;
+    top: 580px;
+    height: 162px;
+ }
+
+
+
+.marker-line-dotted{
+    background: url("../images/proposes/objects/marker-line-dotted.png") 0px 0 scroll  no-repeat;
+    height: 71px;
+    width: 167px;
+    left: 60px;
+    top: 90px;
+}
+
+.marker-line-dotted-left{
+    background: url("../images/proposes/objects/marker-line-dotted-left.png") 0 0 scroll  no-repeat;
+    height: 167px;
+    width: 71px;
+    left: 220px;
+    top: -112px;
+}
+
+.info-block {
+    font-family: 'Roboto', sans-serif;
+    width: 557px;
+    height: 391px;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    color: #000;
+}
+
+.info-block .info{
+    padding: 40px 45px;
+}
+
+.info-block .info p{
+    margin-bottom: 24px;
+    line-height: 26px;
+}
+
+
+
+
+
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 30px solid #FFF;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    left: -25px;
+    top: 20%;
+}
+
+.browser{
+    margin-top: 35px;
+}
+
+.browser-img{
+    background: url("../images/proposes/objects/browser.png") 0 7px no-repeat;
+    width: 132px;
+    height: 60px;
+
+}
+
+.browser-info{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    width: 335px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+
+/*************Opotunities******************/
+
+
+.blue-planet{
+    background: url("../images/opotunities/objects/blue-planet.png") 0 0  no-repeat;
+    width: 190px;
+    height: 195px;
+    /*top: 155px;*/
+    /*left: 50%;*/
+}
+
+
+.green-planet{
+    background: url("../images/opotunities/objects/green-planet.png") 0 0  no-repeat;
+    width: 160px;
+    height: 155px;
+    /*top: 430px;*/
+    /*left: 5%;*/
+}
+
+
+.green-planet-info,
+.blue-planet-info{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    float: left;
+    width: 235px;
+
+}
+
+.green-planet-info{
+    top: 250px;
+     left: 5%;
+}
+
+.blue-planet-info{
+    top: 255px;
+    left: 71% ;
+}
+
+ .number{
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #5884b4;
+}
+
+
+ .wrap{
+    border-top: 2px solid #5884b4;
+    border-bottom: 2px solid #5884b4;
+    padding: 10px 5px;
+     position: relative;
+}
+
+.wrap h2{
+    margin-bottom: 10px;
+}
+
+.wrap p{
+    line-height: 24px;
+}
+
+.green-planet-info .wrap{
+    border-top: 2px solid #14afbe;
+    border-bottom: 2px solid #14afbe;
+}
+
+.green-planet-info .number{
+    color: #14afbe;
+}
+
+
+.blue-planet-info .marker-line-dotted-right{
+    background: url("../images/opotunities/objects/marker-line-dotted-right.png") 0 0 no-repeat;
+    width: 167px;
+    height: 71px;
+    left: -53px;
+    bottom: -77px;
+}
+
+/********************project******************/
+
+.sky{
+    background: url("../images/final/objects/small-cloud.png") 0 0 no-repeat;
+    width: 138px;
+    height: 76px;
+    bottom:100px;
+}
+
+.big-sky{
+    background: url("../images/final/objects/big-cloud.png") 0 0 no-repeat;
+    width: 206px;
+    height: 114px;
+    bottom:300px;
+}
+
+.round-cloud{
+    background: url("../images/final/objects/round-cloud.png") 0 0 no-repeat;
+    width: 335px;
+    height: 292px;
+    left: 700px;
+    top: 50px;
+    padding:  325px 0 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.round-cloud p{
+    line-height: 24px;
+}
+
+.round-cloud .moon{
+    background: url("../images/final/objects/moon.png") 0 0 no-repeat;
+    width: 188px;
+    height: 188px;
+    top: 0;
+    left: 0;
+}
+
+
+.idea{
+    background: url("../images/final/objects/idea.png") 0 0 no-repeat;
+    width: 282px;
+    height: 183px;
+    left: 100px;
+    padding: 96px 0 0 113px;
+}
+
+
+/***********************contact******************************/
+
+.contact-form {
+    font-family: 'Roboto', sans-serif;
+    width: 568px;
+    background: #FFF;
+    position: absolute;
+    top: 20%;
+    right: 10px;
+    z-index: 61;
+}
+
+.contact-wrapper {
+    padding: 30px;
+}
+
+.contact-form h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 34px;
+    border-bottom: 2px solid #eaeaea;
+    color: #27344a;
+    line-height: 27px;
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+
+.contact-form p {
+    padding: 21px 0 29px 0;
+    color: #545454;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.contact-form form {
+    margin-top: 20px;
+}
+
+.contact-form form p {
+    width: 325px;
+    padding: 7px 16px;
+    margin-bottom: 0;
+}
+
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form textarea {
+    border: 1px solid #ebebeb;
+    background: #fafafa;
+    border-radius: 4px;
+    padding: 18px 19px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #545454;
+}
+
+.contact-form input[type=text]:focus,
+.contact-form input[type=email]:focus,
+.contact-form textarea:focus {
+    outline-color: #fecb4c;
+    outline-width: 1px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #545454;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #545454;
+    opacity:  1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #545454;
+    opacity:  1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #545454;
+}
+
+.btn.submit {
+    color: #fff;
+    margin-top: 0;
+    padding: 10px 50px;
+}
+
+.cosmonaut {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../images/contacts/objects/cosmonaut.png");
+    width: 172px;
+    height: 185px;
+}
+.light-planet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: url("../images/contacts/objects/light-planet.png");
+    width: 579px;
+    height: 588px;
+}
+.get-started {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url("../images/contacts/objects/getresult.png");
+    width: 112px;
+    height: 113px;
+}
