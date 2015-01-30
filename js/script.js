@@ -13,9 +13,6 @@ var slideApp =    [
 // create the module and name it spaceApp
 	var spaceApp = angular.module('spaceApp', ['ngRoute', 'directives.winsize', 'directives.skrollr', 'directives.preloader']);
 
-
-
-
 // create the controller and inject Angular's $scope
 	spaceApp.controller('beginController', function($scope) {
 		$scope.message = 'Confige me';
@@ -24,28 +21,39 @@ var slideApp =    [
 
 
 	spaceApp.controller('proposesController', function($scope) {
-		$scope.message = 'Master Site';
 
 	});
 
 
 	spaceApp.controller('opotunitiesController', function($scope) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
-
 
 	});
 
 
 	spaceApp.controller('projectController', function($scope) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
-
 
 	});
 
 
 	spaceApp.controller('contactController', function($scope) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
 
+
+		var formData = {
+			fullname: "default",
+			emailaddress: "default",
+			textareacontent: "default"
+		};
+
+		$scope.save = function() {
+			formData = $scope.form;
+		};
+
+		$scope.submitForm = function() {
+			formData = $scope.form;
+			//$http.post('form.php', JSON.stringify(formData)).success(function(){
+			//
+			//});
+		};
 
 	});
 
@@ -69,7 +77,7 @@ var slideApp =    [
 
 						autoplay = false;
 
-						$scope.msg = 'Want stop';
+						$scope.msg = 'Stop';
 
 					}, 200);
 
@@ -84,8 +92,6 @@ var slideApp =    [
 			};
 
 		});
-
-
 
 
 

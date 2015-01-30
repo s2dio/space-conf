@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('directives.skrollr', [])
   .directive('skrollr', function() {
       return {
@@ -15,11 +14,7 @@ angular.module('directives.skrollr', [])
             },
 
           forceHeight: false,
-
           render: function(data) {
-
-              //$("html, body").scrollTop(data.maxTop);
-
             //Debugging - Log the current scroll position.
             console.log(data.curTop);
           }

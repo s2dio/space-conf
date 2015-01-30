@@ -10,11 +10,11 @@
             <h1>Get In Touch</h1>
             <p>Manchester Road 123-78B, Silictown 7854 MD, Great Country +460 123 456 789 support@configeme.com</p>
             <h1>FeedBack</h1>
-            <form>
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <input type="submit" value="Submit" class="btn submit pull-left">
+            <form ng-submit="submitForm()">
+                <input type="text" placeholder="Full Name" ng-model="form.fullname">
+                <input type="email" placeholder="Your Email"  ng-model="form.emailaddress">
+                <textarea placeholder="Your Message" ng-model="form.textareacontent"></textarea>
+                <input type="submit" value="Submit" class="btn submit pull-left"  ngClick="Submit">
                 <p class="pull-right">Lorem Ipsum dolor sit amet, consectetuer sed dilam nonummy nlbh euismod tincldunt</p>
                 <div class="clearfix"></div>
             </form>
