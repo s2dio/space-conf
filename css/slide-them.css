@@ -41,7 +41,7 @@
 }
 
 .second-logo span.arrow{
-    background: url("../images/begin/arrows.png") 0px 0px no-repeat;
+    background: url("../../build/images/begin/arrows.png") 0px 0px no-repeat;
     display: inline-block;
     height: 31px;
     width: 75px;
@@ -57,7 +57,7 @@
 }
 
 .mouse{
-    background: url("../images/begin/objects/mouse.png") 0px 0px no-repeat;
+    background: url("../../build/images/begin/objects/mouse.png") 0px 0px no-repeat;
     width: 29px;
     height: 53px;
     margin: 0 auto;
@@ -101,7 +101,7 @@
 }
 
 .icon-clock{
-    background: url("../images/begin/objects/time.png") 0 0 no-repeat;
+    background: url("../../build/images/begin/objects/time.png") 0 0 no-repeat;
     width: 29px;
     height: 28px;
     position: absolute;
@@ -129,6 +129,7 @@
     border-bottom: 4px solid #fdac1c;
 }
 
+
 .btn:hover{
     background-color: #ffbc58;
     border-bottom: 4px solid #f5a51c;
@@ -144,11 +145,17 @@
     display: none;
 }
 
+.btn[disabled]{
+    background-color: #e9e9e9;
+    text-shadow: 2px 2px 2px #e9e9e9;
+    border-bottom: 4px solid #e9e9e9;
+}
+
 /**************proposes**************/
 
 
 #web{
-    background: url("../images/proposes/objects/web.png") 0 0 scroll  no-repeat;
+    background: url("../../build/images/proposes/objects/web.png") 0 0 scroll  no-repeat;
     height: 88px;
     /*width: 1920px;*/
     width: 137px;
@@ -167,7 +174,7 @@
 
 
 .marker-line-dotted{
-    background: url("../images/proposes/objects/marker-line-dotted.png") 0px 0 scroll  no-repeat;
+    background: url("../../build/images/proposes/objects/marker-line-dotted.png") 0px 0 scroll  no-repeat;
     height: 71px;
     width: 167px;
     left: 60px;
@@ -175,7 +182,7 @@
 }
 
 .marker-line-dotted-left{
-    background: url("../images/proposes/objects/marker-line-dotted-left.png") 0 0 scroll  no-repeat;
+    background: url("../../build/images/proposes/objects/marker-line-dotted-left.png") 0 0 scroll  no-repeat;
     height: 167px;
     width: 71px;
     left: 220px;
@@ -223,7 +230,7 @@
 }
 
 .browser-img{
-    background: url("../images/proposes/objects/browser.png") 0 7px no-repeat;
+    background: url("../../build/images/proposes/objects/browser.png") 0 7px no-repeat;
     width: 132px;
     height: 60px;
 
@@ -243,7 +250,7 @@
 
 
 .blue-planet{
-    background: url("../images/opotunities/objects/blue-planet.png") 0 0  no-repeat;
+    background: url("../../build/images/opotunities/objects/blue-planet.png") 0 0  no-repeat;
     width: 190px;
     height: 195px;
     /*top: 155px;*/
@@ -252,7 +259,7 @@
 
 
 .green-planet{
-    background: url("../images/opotunities/objects/green-planet.png") 0 0  no-repeat;
+    background: url("../../build/images/opotunities/objects/green-planet.png") 0 0  no-repeat;
     width: 160px;
     height: 155px;
     /*top: 430px;*/
@@ -313,7 +320,7 @@
 
 
 .blue-planet-info .marker-line-dotted-right{
-    background: url("../images/opotunities/objects/marker-line-dotted-right.png") 0 0 no-repeat;
+    background: url("../../build/images/opotunities/objects/marker-line-dotted-right.png") 0 0 no-repeat;
     width: 167px;
     height: 71px;
     left: -53px;
@@ -323,21 +330,21 @@
 /********************project******************/
 
 .sky{
-    background: url("../images/final/objects/small-cloud.png") 0 0 no-repeat;
+    background: url("../../build/images/final/objects/small-cloud.png") 0 0 no-repeat;
     width: 138px;
     height: 76px;
     bottom:100px;
 }
 
 .big-sky{
-    background: url("../images/final/objects/big-cloud.png") 0 0 no-repeat;
+    background: url("../../build/images/final/objects/big-cloud.png") 0 0 no-repeat;
     width: 206px;
     height: 114px;
     bottom:300px;
 }
 
 .round-cloud{
-    background: url("../images/final/objects/round-cloud.png") 0 0 no-repeat;
+    background: url("../../build/images/final/objects/round-cloud.png") 0 0 no-repeat;
     width: 335px;
     height: 292px;
     left: 700px;
@@ -351,7 +358,7 @@
 }
 
 .round-cloud .moon{
-    background: url("../images/final/objects/moon.png") 0 0 no-repeat;
+    background: url("../../build/images/final/objects/moon.png") 0 0 no-repeat;
     width: 188px;
     height: 188px;
     top: 0;
@@ -360,7 +367,7 @@
 
 
 .idea{
-    background: url("../images/final/objects/idea.png") 0 0 no-repeat;
+    background: url("../../build/images/final/objects/idea.png") 0 0 no-repeat;
     width: 282px;
     height: 183px;
     left: 100px;
@@ -395,7 +402,7 @@
 }
 
 .contact-form p {
-    padding: 21px 0 29px 0;
+    padding: 21px 0 14px 0;
     color: #545454;
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
@@ -416,7 +423,6 @@
 .contact-form input[type=email],
 .contact-form textarea {
     border: 1px solid #ebebeb;
-    background: #fafafa;
     border-radius: 4px;
     padding: 18px 19px;
     width: 100%;
@@ -459,7 +465,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: url("../images/contacts/objects/cosmonaut.png");
+    background: url("../../build/images/contacts/objects/cosmonaut.png");
     width: 172px;
     height: 185px;
 }
@@ -469,7 +475,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    background: url("../images/contacts/objects/light-planet.png");
+    background: url("../../build/images/contacts/objects/light-planet.png");
     width: 579px;
     height: 588px;
 }
@@ -477,7 +483,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: url("../images/contacts/objects/getresult.png");
+    background: url("../../build/images/contacts/objects/getresult.png");
     width: 112px;
     height: 113px;
 }

@@ -1,0 +1,35 @@
+{
+  "name": "space_conf_frontend",
+  "version": "0.1.0",
+  "main" : "lib",
+  "authors": [
+    "Stupak Oleg"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "git@github.com:s2dio/space-conf.git"
+  },
+  "description": "Frontend of PriceConfig by Codevog LLC",
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.2",
+    "modernizr": "~2.8.3",
+    "angular": "~1.3.11",
+    "angular-route": "~1.3.11",
+    "angular-cookies": "~1.3.11",
+    "angular-resource": "~1.3.11",
+    "angular-sanitize": "~1.3.11",
+    "angular-translate": ""
+  }
+}
+
+
+

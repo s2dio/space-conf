@@ -9,12 +9,36 @@
         <div class="contact-wrapper">
             <h1>Get In Touch</h1>
             <p>Manchester Road 123-78B, Silictown 7854 MD, Great Country +460 123 456 789 support@configeme.com</p>
-            <h1>FeedBack</h1>
-            <form ng-submit="submitForm()">
-                <input type="text" placeholder="Full Name" ng-model="form.fullname">
-                <input type="email" placeholder="Your Email"  ng-model="form.emailaddress">
-                <textarea placeholder="Your Message" ng-model="form.textareacontent"></textarea>
-                <input type="submit" value="Submit" class="btn submit pull-left"  ngClick="Submit">
+            <h1>FeedBack <span ng-class="{success : success}"></span></h1>
+            <form name="contact" ng-submit="submitForm()" novalidate>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" name = "FName" ng-model="contact.name" ng-minlength="3" ng-maxlength="20" required >
+                    <div   class="error" ng-show="contact.$submitted || contact.FName.$touched">
+                        <div  ng-show="contact.FName.$error.required">Tell us your name.</div>
+                        <div  ng-show="contact.FName.$error.minlength">Too short! Minimum required length is 3 characters.</div>
+                        <div  ng-show="contact.FName.$error.maxlength">Too long! Maximum required length is 20 characters.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" name = "Email" ng-model="contact.email" required >
+                    <div class="error" ng-show="contact.$submitted || contact.Email.$touched" >
+                        <span ng-show="contact.Email.$error.required">Tell us your email.</span>
+                        <span ng-show="contact.Email.$error.email">This is not a valid email.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <textarea placeholder="Your Message" name = "Message"  ng-model="contact.message" ng-minlength="20" ng-maxlength="300" required></textarea>
+                        <div class="error" ng-show="contact.$submitted || contact.Message.$touched" >
+                            <span ng-show="contact.Message.$error.required">Tell us something.</span>
+                            <div ng-show="contact.Message.$error.minlength">Too short! Minimum required length is 20 characters.</div>
+                            <div  ng-show="contact.Message.$error.maxlength">Too long! Maximum required length is 300 characters.</div>
+                        </div>
+                </div>
+
+                <input type="submit" value="Submit" class="btn submit pull-left"  ng-disabled="contact.FName.$invalid || contact.Email.$invalid || contact.Message.$invalid" ngClick="Submit">
                 <p class="pull-right">Lorem Ipsum dolor sit amet, consectetuer sed dilam nonummy nlbh euismod tincldunt</p>
                 <div class="clearfix"></div>
             </form>
