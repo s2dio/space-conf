@@ -125,7 +125,7 @@ spaceApp.controller('slideController',  function($scope, $window, $document) {
 
 
 //menu
-spaceApp.controller('menuController',  function($anchorScroll,  $location, $scope, $window) {
+spaceApp.controller('menuController',  function($anchorScroll, $location, $scope, $window) {
 	$scope.names = slideApp;
 	$scope.accessToken = $window.location.hash.substring(2);
 	$scope.selected =  slideApp[0].name;
