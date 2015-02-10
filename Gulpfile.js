@@ -31,7 +31,10 @@ gulp.task('js', function() {
 
 gulp.task("css", function() {
     gulp.src([
-        './css/*.css'
+        'css/reset.css',
+        'css/style.css',
+        'css/slide-them.css',
+        'css/responsive.css'
     ])
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(concatCss('app.css'))
@@ -67,7 +70,7 @@ gulp.task("connect", function() {
     connect.server({
         root: "./",
         hostname: 'localhost',
-        livereload: true,
+        liverepload: false,
         port: 3000
     });
 });

@@ -17,3 +17,18 @@
         font-size: 6.25vw;
     }
 }
+@media only screen and (max-height: 768px) {
+    .contact-form {
+        top: 10px;
+    }
+    .mouse {
+        top: auto;
+        bottom: 350px;
+    }
+    .logo {
+        top: 360px;
+    }
+    .second-logo {
+        top: 255px;
+    }
+}
