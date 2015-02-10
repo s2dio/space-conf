@@ -5,6 +5,8 @@ angular.module('directives.preloader', [])
             restrict: 'A',
             compile: function(element, attrs) {
                 angular.element(window).bind('load', function() {
+
+                    $("html, body").scrollTop(5000);
                     if (Modernizr.csstransforms) {
                         angular.element('.preloader').hide('slow');
                         element.attr('class', 'loaded');

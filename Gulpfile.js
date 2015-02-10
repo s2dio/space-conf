@@ -66,11 +66,9 @@ gulp.task("watch", ['js', 'css', 'images'], function() {
 
 gulp.task("connect", function() {
     console.log(connect);
-
     connect.server({
         root: "./",
         hostname: 'localhost',
-        liverepload: false,
         port: 3000
     });
 });

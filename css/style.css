@@ -11,12 +11,30 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
+    position:relative;
     padding: 0;
     margin: 0;
     line-height: 1;
-    background: #001d34 url(../../build/images/sky-background.jpg) 50% 50% no-repeat;
-    background-size: 100% 100%;
+    background-image: url(../../build/images/sky-background.jpg);
+    background-color:#001d34;
+    background-position: 0 0;
+
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: scroll;
+
     height: 4775px;
+    min-height: 955px !important;
+    image-rendering:optimizeSpeed;             /* Legal fallback */
+    image-rendering:-moz-crisp-edges;          /* Firefox        */
+    image-rendering:-o-crisp-edges;            /* Opera          */
+    image-rendering:-webkit-optimize-contrast; /* Safari         */
+    image-rendering:optimize-contrast;         /* CSS3 Proposed  */
+    image-rendering:crisp-edges;               /* CSS4 Proposed  */
+    image-rendering:pixelated;                 /* CSS4 Proposed  */
+    -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
     /*min-height: 980px;*/
 }
 
@@ -155,6 +173,8 @@ main {
 .slide > div,
 .slide {
     height: 955px !important;
+    min-height: 955px !important;
+    position: relative;
 }
 
 .slide .slide-container {
@@ -166,6 +186,8 @@ main {
 .rockets {
     /*top:3975px;*/
 
+    height: 955px;
+    width: 1920px;
     z-index: 60;
     position: fixed;
 

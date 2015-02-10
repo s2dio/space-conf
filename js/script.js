@@ -11,18 +11,14 @@ var slideApp =    [
  // create the module and name it spaceApp
 	var spaceApp = angular.module('spaceApp', [
 		'ngRoute',
+        'directives.skrollr',
+        'directives.preloader',
 		'pascalprecht.translate',
 		'ngCookies',
 		'ngSanitize',
 		'directives.winsize',
-		'directives.skrollr',
-		'directives.preloader'
-	]).run(['$anchorScroll', function($anchorScroll) {
-        $anchorScroll.yOffset = 50;   // always scroll by 50 extra pixels
-    }]);
 
-
-
+	]);
 
 
 
@@ -33,6 +29,8 @@ spaceApp.controller('beginController',  function($scope) {
 	$scope.logo = 'Goorbiting';
 	$scope.header = 'Li Europan lingu <br/> es membres del <br/> sam familie.';
 	$scope.description = 'Li Europan lingu <br/> es membres del <br/> sam familie.';
+
+
 });
 
 spaceApp.controller('proposesController', function($scope) {
@@ -89,12 +87,15 @@ spaceApp.controller('contactController', function($scope, $http) {
 
 
 //include all slides on the one page
-spaceApp.controller('slideController',  function($scope, $window, $document) {
+spaceApp.controller('slideController',  function($scope, $location, $window, $document) {
 
 	$scope.templates = slideApp;
 	$scope.msg = 'Automatic start';
 
 	var autoplay = true;
+
+
+
 	// Auto scroll
 	$scope.goStart  = function() {
 		if (autoplay) {
@@ -102,7 +103,7 @@ spaceApp.controller('slideController',  function($scope, $window, $document) {
 
 				$('html, body').animate({
 					scrollTop: -$document.height()
-				}, 50000);
+				}, 20000);
 
 				autoplay = false;
 
@@ -125,10 +126,11 @@ spaceApp.controller('slideController',  function($scope, $window, $document) {
 
 
 //menu
-spaceApp.controller('menuController',  function($anchorScroll, $location, $scope, $window) {
+spaceApp.controller('menuController',  function($location, $scope, $window, $rootScope) {
 	$scope.names = slideApp;
 	$scope.accessToken = $window.location.hash.substring(2);
 	$scope.selected =  slideApp[0].name;
+
 
 
 	//active menu
@@ -139,6 +141,10 @@ spaceApp.controller('menuController',  function($anchorScroll, $location, $scope
 	//Go to slide
 	$scope.goTo = function(name) {
 		var scrollPos =  $('#'+name).offset().top;
+
+        if(name == slideApp[0].name) {
+            scrollPos = 5000
+        }
 
         if ($location.hash() !== name) {
             $('html, body').stop(true, true).animate({
@@ -153,7 +159,7 @@ spaceApp.controller('menuController',  function($anchorScroll, $location, $scope
 
 
 	// Bind to scroll
-	angular.element($window).bind("scroll", function() {
+	angular.element($window).on("scroll", function() {
 		// Get container scroll position
 		var lastId, cur = [], fromTop = $(this).scrollTop();
 
@@ -177,13 +183,26 @@ spaceApp.controller('menuController',  function($anchorScroll, $location, $scope
 		}, cur);
 		// selected item
 		if (cur[0]) {
+            $location.path(cur[0], false);
 			$scope.selected = cur[0];
 		}
 
 		$scope.$apply();
 	});
-	//$scope.selected =  slideApp[0].name;
+    //
+    //angular.element($window).on("load", function() {
+    //    $scope.goTo(slideApp[0].name);
+    //    $location.path(slideApp[0].name, false);
+    //});
+
+
+
 	$scope.$watch('selected', function(obj) {
-		console.log( "result: " + $scope.selected );
+		//console.log( "result: " + $scope.selected );
 	}, true);
+
+
+
+
+
 });
