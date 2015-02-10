@@ -23,7 +23,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
 
     height: 4775px;
     min-height: 955px !important;

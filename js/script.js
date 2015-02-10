@@ -87,10 +87,10 @@ spaceApp.controller('contactController', function($scope, $http) {
 
 
 //include all slides on the one page
-spaceApp.controller('slideController',  function($scope, $location, $window, $document) {
+spaceApp.controller('slideController',  function($scope, $rootScope, $window, $document) {
 
 	$scope.templates = slideApp;
-	$scope.msg = 'Automatic start';
+    $rootScope.msg = 'Automatic start';
 
 	var autoplay = true;
 
@@ -107,7 +107,7 @@ spaceApp.controller('slideController',  function($scope, $location, $window, $do
 
 				autoplay = false;
 
-				$scope.msg = 'Stop';
+                $rootScope.msg = 'Stop';
 
 			}, 200);
 
@@ -117,7 +117,7 @@ spaceApp.controller('slideController',  function($scope, $location, $window, $do
 
 			autoplay = true;
 
-			$scope.msg = 'Automatic start';
+            $rootScope.msg = 'Automatic start';
 		}
 	};
 
@@ -168,6 +168,7 @@ spaceApp.controller('menuController',  function($location, $scope, $window, $roo
 		//stop animation
 		if($(this).scrollTop() <= 0){
 			$('html, body').stop();
+            $rootScope.msg = 'Automatic start';
 		}
 
 		//console.log($(this).scrollTop());
