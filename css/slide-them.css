@@ -382,7 +382,7 @@
     width: 568px;
     background: #FFF;
     position: absolute;
-    top: 20%;
+    top: 10%;
     right: 10px;
     z-index: 61;
 }
@@ -478,7 +478,54 @@
     background: url("../../build/images/contacts/objects/light-planet.png");
     width: 579px;
     height: 588px;
+
+    -webkit-animation: planet 40s infinite;
+    -moz-animation: planet 40s infinite;
+    -o-animation: planet 40s infinite;
+    animation: planet 40s infinite;
 }
+
+@-webkit-keyframes planet {
+    0% {
+        -webkit-transform: rotate(180deg);
+        -webkit-animation-timing-function: linear;
+    }
+    100% {
+        -webkit-transform: rotate(-180deg);
+        -webkit-animation-timing-function: linear;
+    }
+}
+@-moz-keyframes planet {
+    0% {
+        -moz-transform: rotate(180deg);
+        -moz-animation-timing-function: linear;
+    }
+    100% {
+        -moz-transform: rotate(-180deg);
+        -moz-animation-timing-function: linear;
+    }
+}
+@-o-keyframes planet {
+    0% {
+        -o-transform: rotate(180deg);
+        -o-animation-timing-function: linear;
+    }
+    100% {
+        -o-transform: rotate(-180deg);
+        -o-animation-timing-function: linear;
+    }
+}
+@keyframes planet {
+    0% {
+        transform: rotate(180deg);
+        animation-timing-function: linear;
+    }
+    100% {
+        transform: rotate(-180deg);
+        animation-timing-function: linear;
+    }
+}
+
 .get-started {
     position: fixed;
     top: 0;

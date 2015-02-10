@@ -12,12 +12,8 @@ body {
     padding: 0;
     margin: 0;
     line-height: 1;
-    background-image: url(../../build/images/sky-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: 50% 50%;
+    background: #001d34 url(../../build/images/sky-background.jpg) 50% 50% no-repeat;
     background-size: cover;
-    background-color: #001d34;
     height: 4775px;
     /*min-height: 980px;*/
 }
@@ -141,7 +137,6 @@ main {
     background: #444;
     bottom: 0;
     left: 0;
-    z-index: 200;
     position: fixed;
     z-index: 2000;
 }
@@ -193,12 +188,34 @@ main {
     right: 35px;
     top: 235px;
     transform-origin: center bottom;
+
     -webkit-animation-name: flicker;
     -webkit-animation-duration: 3ms;
     -webkit-animation-delay: 200ms;
     -webkit-animation-timing-function: ease-in;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
+
+    -moz-animation-name: flicker;
+    -moz-animation-duration: 3ms;
+    -moz-animation-delay: 200ms;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: alternate;
+
+    -o-animation-name: flicker;
+    -o-animation-duration: 3ms;
+    -o-animation-delay: 200ms;
+    -o-animation-timing-function: ease-in;
+    -o-animation-iteration-count: infinite;
+    -o-animation-direction: alternate;
+
+    animation-name: flicker;
+    animation-duration: 3ms;
+    animation-delay: 200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     z-index: 5;
 }
 
@@ -248,12 +265,37 @@ main {
     right: 0;
     top: 207px;
     transform-origin: center bottom;
+
     -webkit-animation-name: flicker;
+    -moz-animation-name: flicker;
+    -o-animation-name: flicker;
+    animation-name: flicker;
+
     -webkit-animation-duration: 3ms;
+    -moz-animation-duration: 3ms;
+    -o-animation-duration: 3ms;
+    animation-duration: 3ms;
+
     -webkit-animation-delay: 200ms;
+    -moz-animation-delay: 200ms;
+    -o-animation-delay: 200ms;
+    animation-delay: 200ms;
+
     -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+
     -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
     -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    -o-animation-direction: alternate;
+    animation-direction: alternate;
+
     z-index: 5;
 }
 
@@ -263,6 +305,9 @@ main {
     border-bottom-right-radius: 90%;
     border-bottom-left-radius: 0;
     border-top-left-radius: 90%;
+    -webkit-transform: rotate(-45deg) scale(1.5, 1.5);
+    -moz-transform: rotate(-45deg) scale(1.5, 1.5);
+    -o-transform: rotate(-45deg) scale(1.5, 1.5);
     transform: rotate(-45deg) scale(1.5, 1.5);
 }
 
@@ -271,7 +316,7 @@ main {
     width: 30px;
     height: 30px;
     background: gold;
-    box-shadow: 0px 0px 9px 4px gold;
+    box-shadow: 0 0 9px 4px gold;
 }
 
 .orange {
@@ -279,7 +324,7 @@ main {
     width: 40px;
     height: 40px;
     background: orange;
-    box-shadow: 0px 0px 9px 4px orange;
+    box-shadow: 0 0 9px 4px orange;
 }
 
 .red {
@@ -287,7 +332,7 @@ main {
     width: 50px;
     height: 50px;
     background: OrangeRed;
-    box-shadow: 0px 0px 5px 4px OrangeRed;
+    box-shadow: 0 0 5px 4px OrangeRed;
 }
 
 .white {
@@ -296,7 +341,7 @@ main {
     width: 30px;
     height: 30px;
     background: white;
-    box-shadow: 0px 0px 9px 4px white;
+    box-shadow: 0 0 9px 4px white;
 }
 
 .circle {
@@ -305,6 +350,66 @@ main {
 }
 
 @-webkit-keyframes flicker {
+    0% {
+        -webkit-transform: rotate(-2deg);
+    }
+    20% {
+        -webkit-transform: rotate(2deg);
+    }
+    40% {
+        -webkit-transform: rotate(-2deg);
+    }
+    60% {
+        -webkit-transform: rotate(2deg) scaleY(1.04);
+    }
+    80% {
+        -webkit-transform: rotate(-2deg) scaleY(0.92);
+    }
+    100% {
+        -webkit-transform: rotate(1deg);
+    }
+}
+@-moz-keyframes flicker {
+    0% {
+        -moz-transform: rotate(-2deg);
+    }
+    20% {
+        -moz-transform: rotate(2deg);
+    }
+    40% {
+        -moz-transform: rotate(-2deg);
+    }
+    60% {
+        -moz-transform: rotate(2deg) scaleY(1.04);
+    }
+    80% {
+        -moz-transform: rotate(-2deg) scaleY(0.92);
+    }
+    100% {
+        -moz-transform: rotate(1deg);
+    }
+}
+@-o-keyframes flicker {
+    0% {
+        -o-transform: rotate(-2deg);
+    }
+    20% {
+        -o-transform: rotate(2deg);
+    }
+    40% {
+        -o-transform: rotate(-2deg);
+    }
+    60% {
+        -o-transform: rotate(2deg) scaleY(1.04);
+    }
+    80% {
+        -o-transform: rotate(-2deg) scaleY(0.92);
+    }
+    100% {
+        -o-transform: rotate(1deg);
+    }
+}
+@keyframes flicker {
     0% {
         transform: rotate(-2deg);
     }
@@ -325,31 +430,56 @@ main {
     }
 }
 
+/*----------GRAVITY----------*/
 @-webkit-keyframes gravity {
     0% {
         -webkit-transform: rotate(-45deg);
         -webkit-animation-timing-function: ease-in-out;
-        -moz-transform: rotate(-45deg);
-        -moz-animation-timing-function: ease-in-out;
-        -o-transform: rotate(-45deg);
-        -o-animation-timing-function: ease-in-out;
-        transform: rotate(-45deg);
-        animation-timing-function: ease-in-out;
     }
     50% {
         -webkit-transform: rotate(45deg);
         -webkit-animation-timing-function: ease-in-out;
+    }
+    100% {
+        -webkit-transform: rotate(-45deg);
+    }
+}
+@-moz-keyframes gravity {
+    0% {
+        -moz-transform: rotate(-45deg);
+        -moz-animation-timing-function: ease-in-out;
+    }
+    50% {
         -moz-transform: rotate(45deg);
         -moz-animation-timing-function: ease-in-out;
+    }
+    100% {
+        -moz-transform: rotate(-45deg);
+    }
+}
+@-o-keyframes gravity {
+    0% {
+        -o-transform: rotate(-45deg);
+        -o-animation-timing-function: ease-in-out;
+    }
+    50% {
         -o-transform: rotate(45deg);
         -o-animation-timing-function: ease-in-out;
+    }
+    100% {
+        -o-transform: rotate(-45deg);
+    }
+}
+@keyframes gravity {
+    0% {
+        transform: rotate(-45deg);
+        animation-timing-function: ease-in-out;
+    }
+    50% {
         transform: rotate(45deg);
         animation-timing-function: ease-in-out;
     }
     100% {
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
         transform: rotate(-45deg);
     }
 }

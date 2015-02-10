@@ -28,7 +28,7 @@ var slideApp =    [
 
 spaceApp.controller('beginController',  function($scope) {
 	$scope.message = 'Confige me';
-	$scope.logo = 'Master Site';
+	$scope.logo = 'Goorbiting';
 	$scope.header = 'Li Europan lingu <br/> es membres del <br/> sam familie.';
 	$scope.description = 'Li Europan lingu <br/> es membres del <br/> sam familie.';
 });
@@ -160,7 +160,7 @@ spaceApp.controller('menuController',  function($scope, $window) {
 	angular.element($window).bind("scroll", function() {
 		// Get container scroll position
 		var lastId, cur = [], fromTop = $(this).scrollTop();
-
+		cur[0] = slideApp[0].name;
 		//stop animation
 		if($(this).scrollTop() < 10){
 			$('html, body').stop();
@@ -175,8 +175,8 @@ spaceApp.controller('menuController',  function($scope, $window) {
 			if (itemTop <= fromTop) {
 				this.push(value.name);
 			}
-		}, cur);
 
+		}, cur);
 		// selected item
 		if (cur[0]) {
 			$scope.selected = cur[0];
