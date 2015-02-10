@@ -17,9 +17,7 @@ gulp.task('js', function() {
         './bower_components/angular-translate/angular-translate.js',
         './bower_components/angular-sanitize/angular-sanitize.js',
         './bower_components/angular-resource/angular-resource.js',
-
         './js/lib/*',
-
         './bower_components/modernizr/modernizr.js',
         './js/script.js',
 
@@ -56,14 +54,22 @@ gulp.task('images', function(cb) {
 
 
 
-gulp.task("watch", ['js', 'css'], function() {
+gulp.task("watch", ['js', 'css', 'images'], function() {
     gulp.watch('./js/**/*', ['js']);
     gulp.watch('./css/*', ['css']);
+    gulp.watch('./images/*', ['images']);
+
 });
 
 gulp.task("connect", function() {
     console.log(connect);
-    connect.server({ root: "./", port: 3000 });
+
+    connect.server({
+        root: "./",
+        hostname: 'localhost',
+        livereload: true,
+        port: 3000
+    });
 });
 
 

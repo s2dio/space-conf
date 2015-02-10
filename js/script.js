@@ -17,7 +17,9 @@ var slideApp =    [
 		'directives.winsize',
 		'directives.skrollr',
 		'directives.preloader'
-	])
+	]).run(['$anchorScroll', function($anchorScroll) {
+        $anchorScroll.yOffset = 50;   // always scroll by 50 extra pixels
+    }]);
 
 
 
@@ -52,10 +54,6 @@ spaceApp.controller('contactController', function($scope, $http) {
 	$scope.formData = {};
 
 
-
-
-
-
 	$scope.submitForm = function() {
 
 		 //$http.post('form.php', JSON.stringify(formData)).success(function(){});
@@ -84,11 +82,6 @@ spaceApp.controller('contactController', function($scope, $http) {
 		//	}
 		//});
 	};
-
-
-
-
-
 
 
 });
@@ -132,7 +125,7 @@ spaceApp.controller('slideController',  function($scope, $window, $document) {
 
 
 //menu
-spaceApp.controller('menuController',  function($scope, $window) {
+spaceApp.controller('menuController',  function($anchorScroll,  $location, $scope, $window) {
 	$scope.names = slideApp;
 	$scope.accessToken = $window.location.hash.substring(2);
 	$scope.selected =  slideApp[0].name;
@@ -146,23 +139,28 @@ spaceApp.controller('menuController',  function($scope, $window) {
 	//Go to slide
 	$scope.goTo = function(name) {
 		var scrollPos =  $('#'+name).offset().top;
-		$('html, body').stop(true, true).animate({
-			scrollTop: scrollPos
-		}, 3000, function(){
-			// selected item
-			$scope.selected = name;
-		});
 
+        if ($location.hash() !== name) {
+            $('html, body').stop(true, true).animate({
+                scrollTop: scrollPos
+            }, 3000, function(){
+                // selected item
+                $scope.selected = name;
+            });
+        }
 	}
+
 
 
 	// Bind to scroll
 	angular.element($window).bind("scroll", function() {
 		// Get container scroll position
 		var lastId, cur = [], fromTop = $(this).scrollTop();
-		cur[0] = slideApp[0].name;
+
+        //cur[0] = slideApp[0].name;
+
 		//stop animation
-		if($(this).scrollTop() < 10){
+		if($(this).scrollTop() <= 0){
 			$('html, body').stop();
 		}
 

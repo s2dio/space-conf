@@ -4,7 +4,7 @@
          return {
              link: function(scope, element, attrs) {
                 var $win = $(window);
-                 $("html, body").scrollTop(element.last().offset().top);
+                 $("html, body").scrollTop(9000);
                  element.height($win.height());
                  $win.resize(function(){
                      element.height($win.height());
