@@ -99,35 +99,40 @@ spaceApp.controller('projectController', function($scope) {
 
 spaceApp.controller('contactController', function($scope, $http) {
 	$scope.formData = {};
+    $scope.originForm = angular.copy($scope.contact);
 
 
 	$scope.submitForm = function() {
-
-		 //$http.post('form.php', JSON.stringify(formData)).success(function(){});
 
 		$scope.formData = {
 			name: $scope.contact.name,
 			email: $scope.contact.email,
 			message: $scope.contact.message
 		};
+        console.log($scope.formData);
 
-		$scope.success = true;
 
-		console.log($scope.formData);
-		//$scope.success = "success"
-		//$http({
-		//	method  : 'POST',
-		//	url     : 'contact-form.php',
-		//	data    : $.param($scope.formData),
-		//	headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
-		//}).success(function(data){
-		//	console.log(data);
-		//	if (data.success) {
-		//		$scope.success = "success"
-		//	} else {
-		//		$scope.success = "error"
-		//	}
-		//});
+        $scope.resetForm = function(){
+            $scope.contact.name = '';
+            $scope.contact.email = '';
+            $scope.contact.message = '';
+        };
+
+        $scope.resetForm();
+
+		$http({
+			method  : 'POST',
+			url     : 'contact-form.php',
+			data    : $.param($scope.formData),
+			headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+		}).success(function(data){
+			if (data.success) {
+				$scope.success = "success";
+                $scope.resetForm();
+			} else {
+				$scope.success = "error";
+            }
+		});
 	};
 
 
@@ -137,8 +142,6 @@ spaceApp.controller('contactController', function($scope, $http) {
 
 //include all slides on the one page
 spaceApp.controller('slideController',  function($scope, $rootScope, animate, $window, $document) {
-
-
 
 });
 
