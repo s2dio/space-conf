@@ -587,3 +587,12 @@ main {
     display: inline-block;
     float: right;
 }
+
+.footer-background {
+    background: url("../../build/images/land-bg-2.png") no-repeat;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 528px;
+}

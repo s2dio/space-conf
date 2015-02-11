@@ -11,7 +11,7 @@
 .logo{
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    font-size: 140px;
+    font-size: 85px;
     position: absolute;
     top:200px;
     left: 0;
@@ -68,7 +68,7 @@
 }
 
 .start-patform{
-    bottom: 0px;
+    bottom: 0;
     width: 500px;
     height: 350px;
     padding: 20px;
@@ -85,6 +85,7 @@
     background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    z-index: 4;
 }
 
 .start-patform-info h2{
@@ -164,9 +165,9 @@
 }
 
 #text-opotunities{
-    height: 141px;
+    /*height: 141px;*/
     /*width: 1920px;*/
-    width: auto;
+    width: 270px;
     top: 580px;
     height: 162px;
  }
