@@ -18,7 +18,21 @@ var slideApp =    [
 		'ngSanitize',
 		'directives.winsize',
 
-	]);
+	])
+      //timer
+      .factory('animate', function($window, $rootScope) {
+        var requestAnimationFrame = $window.requestAnimationFrame ||
+            $window.mozRequestAnimationFrame ||
+            $window.msRequestAnimationFrame ||
+            $window.webkitRequestAnimationFrame;
+
+
+        return function(tick) {
+            requestAnimationFrame(function() {
+                $rootScope.$apply(tick);
+            });
+        };
+    });
 
 
 
@@ -29,9 +43,8 @@ spaceApp.controller('beginController',  function($scope) {
 	$scope.logo = 'Goorbiting';
 	$scope.header = 'Li Europan lingu <br/> es membres del <br/> sam familie.';
 	$scope.description = 'Li Europan lingu <br/> es membres del <br/> sam familie.';
-
-
 });
+
 
 spaceApp.controller('proposesController', function($scope) {
 
@@ -87,7 +100,7 @@ spaceApp.controller('contactController', function($scope, $http) {
 
 
 //include all slides on the one page
-spaceApp.controller('slideController',  function($scope, $rootScope, $window, $document) {
+spaceApp.controller('slideController',  function($scope, $rootScope, animate, $window, $document) {
 
 	$scope.templates = slideApp;
     $rootScope.msg = 'Automatic start';
@@ -95,30 +108,31 @@ spaceApp.controller('slideController',  function($scope, $rootScope, $window, $d
 	var autoplay = true;
 
 
+    //start animate
+    $scope.startAnimate = function() {
 
-	// Auto scroll
+        $('html, body').animate({
+            scrollTop: -$document.height()
+        }, 20000);
+
+        autoplay = false;
+        $rootScope.msg = 'Stop flight';
+    };
+
+
+    //stop animate
+    $scope.stopAnimate = function() {
+
+        $('html, body').stop();
+        autoplay = true;
+        $rootScope.msg = 'Automatic start flight';
+    };
+
+
+
+    // Auto scroll
 	$scope.goStart  = function() {
-		if (autoplay) {
-			$window.setTimeout(function () {
-
-				$('html, body').animate({
-					scrollTop: -$document.height()
-				}, 20000);
-
-				autoplay = false;
-
-                $rootScope.msg = 'Stop';
-
-			}, 200);
-
-		} else {
-
-			$('html, body').stop();
-
-			autoplay = true;
-
-            $rootScope.msg = 'Automatic start';
-		}
+        autoplay ? animate($scope.startAnimate) : $scope.stopAnimate;
 	};
 
 });
