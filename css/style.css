@@ -25,8 +25,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
 
-    height: 4775px;
-    min-height: 955px !important;
+
     image-rendering:optimizeSpeed;             /* Legal fallback */
     image-rendering:-moz-crisp-edges;          /* Firefox        */
     image-rendering:-o-crisp-edges;            /* Opera          */
@@ -170,12 +169,7 @@ main {
     position: relative;
     /*margin-left: 460px;*/
 }
-.slide > div,
-.slide {
-    height: 955px !important;
-    min-height: 955px !important;
-    position: relative;
-}
+
 
 .slide .slide-container {
     position: relative;
@@ -199,7 +193,7 @@ main {
     width: 1170px;
     height: 298px;
     z-index: 200;
-    position: relative;
+    position: absolute;
 }
 
 /*smoke*/
@@ -590,7 +584,7 @@ main {
 
 .footer-background {
     background: url("../../build/images/land-bg-2.png") no-repeat;
-
+    z-index: -1;
     position: absolute;
     bottom: 0;
     width: 100%;

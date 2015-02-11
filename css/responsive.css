@@ -32,3 +32,32 @@
         top: 255px;
     }
 }
+@media only screen and (min-width: 481px) {
+    .slide > div,
+    .slide {
+        height: 955px !important;
+        min-height: 955px !important;
+        position: relative;
+    }
+    body {
+        height: 4775px;
+        min-height: 955px !important;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    body {
+        height: 100%;
+        min-height: 100%;
+    }
+    main {
+        position: relative;
+    }
+    .mouse {
+        display: none;
+    }
+    .nav a:focus {
+        outline: none;
+    }
+}
