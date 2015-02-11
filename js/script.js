@@ -35,6 +35,42 @@ var slideApp =    [
     });
 
 
+spaceApp.controller('spaceController',  function($scope, $rootScope, animate, $window, $document) {
+    $scope.templates = slideApp;
+    $rootScope.msg = 'Automatic start';
+
+    var autoplay = true;
+
+
+    //start animate
+    $scope.startAnimate = function() {
+
+        $('html, body').animate({
+            scrollTop: -$document.height()
+        }, 60000);
+
+        autoplay = false;
+        $rootScope.msg = 'Stop flight';
+    };
+
+
+    //stop animate
+    $scope.stopAnimate = function() {
+
+        $('html, body').stop();
+        autoplay = true;
+        $rootScope.msg = 'Automatic start flight';
+    };
+
+
+
+    // Auto scroll
+    $scope.goStart  = function() {
+        autoplay ? animate($scope.startAnimate) : $scope.stopAnimate;
+    };
+});
+
+
 
 
 
@@ -102,38 +138,7 @@ spaceApp.controller('contactController', function($scope, $http) {
 //include all slides on the one page
 spaceApp.controller('slideController',  function($scope, $rootScope, animate, $window, $document) {
 
-	$scope.templates = slideApp;
-    $rootScope.msg = 'Automatic start';
 
-	var autoplay = true;
-
-
-    //start animate
-    $scope.startAnimate = function() {
-
-        $('html, body').animate({
-            scrollTop: -$document.height()
-        }, 20000);
-
-        autoplay = false;
-        $rootScope.msg = 'Stop flight';
-    };
-
-
-    //stop animate
-    $scope.stopAnimate = function() {
-
-        $('html, body').stop();
-        autoplay = true;
-        $rootScope.msg = 'Automatic start flight';
-    };
-
-
-
-    // Auto scroll
-	$scope.goStart  = function() {
-        autoplay ? animate($scope.startAnimate) : $scope.stopAnimate;
-	};
 
 });
 
@@ -204,7 +209,9 @@ spaceApp.controller('menuController',  function($location, $scope, $window, $roo
 
 		$scope.$apply();
 	});
-    //
+
+
+
     //angular.element($window).on("load", function() {
     //    $scope.goTo(slideApp[0].name);
     //    $location.path(slideApp[0].name, false);
