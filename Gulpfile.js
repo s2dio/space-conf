@@ -14,11 +14,9 @@ gulp.task('js', function() {
         './bower_components/angular/angular.js',
         './bower_components/angular-route/angular-route.js',
         './bower_components/angular-cookies/angular-cookies.js',
-        './bower_components/angular-translate/angular-translate.js',
         './bower_components/angular-sanitize/angular-sanitize.js',
         './bower_components/angular-resource/angular-resource.js',
         './js/lib/*',
-        './bower_components/modernizr/modernizr.js',
         './js/script.js',
 
     ])
