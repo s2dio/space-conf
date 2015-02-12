@@ -178,9 +178,6 @@ main {
 /*rocket*/
 
 .rockets {
-    /*top:3975px;*/
-
-    height: 955px;
     width: 1920px;
     z-index: 60;
     position: fixed;
@@ -188,9 +185,9 @@ main {
 }
 
 .rocket {
-    /*width: 148px;*/
-    background: url("../../build/images/rocket.png") no-repeat scroll 354px 0 transparent;
-    width: 1170px;
+    background: url('../../build/images/rocket.png') 0 0 no-repeat;
+    width: 150px;
+    left: 354px;
     height: 298px;
     z-index: 200;
     position: absolute;

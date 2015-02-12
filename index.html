@@ -10,33 +10,11 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/images/114.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/72.png">
     <link rel="apple-touch-icon" href="/images/57.png">
-    <!--<link rel="stylesheet" href="css/reset.css" />-->
-    <!--<link rel="stylesheet" href="css/style.css" />-->
-    <!--<link rel="stylesheet" href="css/slide-them.css" />-->
-    <!--<link rel="stylesheet" href="css/responsive.css" />-->
-
-
-
-    <!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
-    <!--<script src="js/lib/angular.min.js"></script>-->
-    <!--<script src="js/lib/angular-route.min.js"></script>-->
-    <!--<script src="js/lib/angular-cookies.min.js"></script>-->
-    <!--<script src="js/lib/angular-translate.js"></script>-->
-    <!--<script src="js/lib/angular-sanitize.min.js"></script>-->
-    <!--<script src="js/lib/preloader.directives.js"></script>-->
-    <!--<script src="js/lib/win.size.directives.js"></script>-->
-    <!--<script src="js/lib/skrollr.min.js"></script>-->
-    <!--<script src="js/lib/skrollr.directives.js"></script>-->
-    <!--<script src="js/lib/modernizr.js"></script>-->
-    <!--<script src="js/script.js"></script>-->
 </head>
 
-<!-- define angular controller -->
 <body data-preloader>
 
-<!--// MAIN SLID //-->
 <main>
-    <!--// NAVBAR //-->
     <nav class="nav" ng-controller="menuController">
         <div ng-repeat="n in names">
             <a class="navbar-{{n.name}}" ng-class="{ active: isActive(n.name) }" href="#{{n.name}}" title="{{n.name}}" ng-click="goTo(n.name)">{{n.name}}</a>
@@ -49,7 +27,6 @@
         </div>
       </section>
 
-    <!--<div class="rockets" data-3900="top: 4411px; position: absolute;"  data-3006px="top: 3411px position: absolute;"  data-2971="top: 26px;  position: fixed;" data-1980="top: 26px  position: fixed;"  data-990="top: 26px  position: fixed;" data-0="top: 36px;  position: fixed;"  >-->
     <section id="rocket">
         <div class="rockets" data-3790="top: 100%; margin-top: -300px"  data-2660="top: 20%;  margin-top: 0px" data-1980="top: 30%;  margin-top: 0px" data-370="top: 30%; margin-top: 0px "  data-10="top: 25%; margin-top: 0px ">
             <div class="rocket"></div>

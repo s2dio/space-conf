@@ -534,4 +534,5 @@
     background: url("../../build/images/contacts/objects/getresult.png");
     width: 112px;
     height: 113px;
+    z-index: 1;
 }
