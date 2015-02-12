@@ -14,29 +14,26 @@ gulp.task('js', function() {
         './bower_components/angular/angular.js',
         './bower_components/angular-route/angular-route.js',
         './bower_components/angular-cookies/angular-cookies.js',
+        './bower_components/angular-translate/angular-translate.js',
         './bower_components/angular-sanitize/angular-sanitize.js',
         './bower_components/angular-resource/angular-resource.js',
-        './js/lib/skrollr.min.js',
-        './js/lib/preloader.directives.js',
-        './js/lib/skrollr.directives.js',
-        './js/lib/win.size.directives.js',
+        './js/lib/*',
         './js/script.js'
+
     ])
         .pipe(sourcemaps.init())
         .pipe(concat("app.js"))
-        .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("./build/assets/"));
 });
 
-//'./js/lib/*',
 
 gulp.task("css", function() {
     gulp.src([
-        './css/reset.css',
-        './css/style.css',
-        './css/slide-them.css',
-        './css/responsive.css'
+        'css/reset.css',
+        'css/style.css',
+        'css/slide-them.css',
+        'css/responsive.css'
     ])
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(concatCss('app.css'))
@@ -66,13 +63,12 @@ gulp.task("watch", ['js', 'css', 'images'], function() {
 
 });
 
-
 gulp.task("connect", function() {
     console.log(connect);
     connect.server({
         root: "./",
         hostname: 'localhost',
-        port: 8000
+        port: 3000
     });
 });
 
