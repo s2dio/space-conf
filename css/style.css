@@ -587,3 +587,10 @@ main {
     width: 100%;
     height: 528px;
 }
+ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+ul li {
+    padding: 5px 0;
+}

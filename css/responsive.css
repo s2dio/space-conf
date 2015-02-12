@@ -1,20 +1,20 @@
 @media only screen and (max-width: 1024px) {
     .logo {
         width: 800px;
-        font-size: 7.0vw;
+        font-size: 6.2vw;
         text-align: center;
     }
 }
 @media only screen and (max-width: 900px) {
     .logo {
         width: 700px;
-        font-size: 6.0vw;
+        font-size: 5.2vw;
     }
 }
 @media only screen and (max-width: 800px) {
     .logo {
         width: 500px;
-        font-size: 3.25vw;
+        font-size: 2.5vw;
     }
 }
 @media only screen and (max-height: 768px) {
