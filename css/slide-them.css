@@ -193,7 +193,7 @@
 .info-block {
     font-family: 'Roboto', sans-serif;
     width: 557px;
-    height: 391px;
+    /*height: 391px;*/
     background: #FFF;
     position: absolute;
     top: 0;

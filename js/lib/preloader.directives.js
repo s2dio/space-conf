@@ -10,7 +10,7 @@ angular.module('directives.preloader', [])
 
                     var b = document.body.style;
                     if(b.MozTransition=='' || b.WebkitTransition=='' || b.OTransition=='' || b.transition=='') {
-                        angular.element('.preloader').hide('slow');
+                        angular.element('.preloader').hide();
                         element.attr('class', 'loaded');
                     } else {
                         angular.element('.not-support').show();
