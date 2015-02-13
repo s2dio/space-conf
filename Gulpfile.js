@@ -5,8 +5,8 @@ var gulp = require("gulp"),
     concatCss = require('gulp-concat-css'),
     connect = require('gulp-connect'),
     uglify = require('gulp-uglify'),
-    minifyCSS = require('gulp-minify-css');
-
+    minifyCSS = require('gulp-minify-css'),
+    htmlmin = require('gulp-htmlmin');
 
 gulp.task('js', function() {
     gulp.src([
@@ -17,14 +17,28 @@ gulp.task('js', function() {
         './bower_components/angular-translate/angular-translate.js',
         './bower_components/angular-sanitize/angular-sanitize.js',
         './bower_components/angular-resource/angular-resource.js',
-        './js/lib/*',
-        './js/script.js'
+        './js/script.js',
+        './js/lib/*'
+
 
     ])
-        .pipe(sourcemaps.init())
-        .pipe(concat("app.js"))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.init())
+        //.pipe(concat("app.js"))
+        //.pipe(sourcemaps.write())
+        //.pipe(gulp.dest("./build/assets/"));
+        //.pipe(sourcemaps.init())
+
+
+
+        .pipe(concat('app.js'))
+        //.pipe(ngmin())
+        .pipe(gulp.dest("./build/assets/"))
+        .pipe(uglify({mangle: false}))
         .pipe(gulp.dest("./build/assets/"));
+        //.pipe(liveReload(server));
+        //.pipe(rename('app.js'))
+        //.pipe(sourcemaps.write())
+
 });
 
 
@@ -53,10 +67,16 @@ gulp.task('images', function(cb) {
     })).pipe(gulp.dest('./build/images')).on('end', cb).on('error', cb);
 });
 
+gulp.task('minify',function(){
+   gulp.src('src/*.html')
+       .pipe(htmlmin({collapseWhitespace: true}))
+       .pipe(gulp.dest('dist'))
+});
 
 
 
-gulp.task("watch", ['js', 'css', 'images'], function() {
+
+gulp.task("watch", ['js', 'css', 'images', 'minify'], function() {
     gulp.watch('./js/**/*', ['js']);
     gulp.watch('./css/*', ['css']);
     gulp.watch('./images/*', ['images']);

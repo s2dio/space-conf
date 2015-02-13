@@ -28,7 +28,6 @@ angular.module('directives.skrollr', [])
             return {
                 link: function(scope, element, attrs){
                     skrollrService.skrollr().then(function(skrollr){
-                        //console.log('New value');
                         skrollr.refresh();
                     });
 
@@ -36,7 +35,6 @@ angular.module('directives.skrollr', [])
                         function () { return element[0].childNodes.length; },
                         function (newValue, oldValue) {
                             if (newValue !== oldValue) {
-                                //console.log('New value');
                                 skrollrService.skrollr().then(function(skrollr){
                                     skrollr.refresh();
                                 });
