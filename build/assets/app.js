@@ -41597,9 +41597,9 @@ spaceApp.controller('menuController',  function($location, $scope, $window, $roo
 	$scope.goTo = function(name) {
 		var scrollPos =  $('#'+name).offset().top;
 
-        //if(name == slideApp[0].name) {
-        //    scrollPos = 5000
-        //}
+        if(name == slideApp[0].name) {
+            scrollPos = 5000
+        }
 
         if ($location.hash() !== name) {
             $('html, body').stop(true, true).animate({
