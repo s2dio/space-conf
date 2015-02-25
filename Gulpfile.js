@@ -33,8 +33,11 @@ gulp.task('js', function() {
         .pipe(concat('app.js'))
         //.pipe(ngmin())
         .pipe(gulp.dest("./build/assets/"))
-        .pipe(uglify({mangle: false}))
-        .pipe(gulp.dest("./build/assets/"));
+
+        //.pipe(uglify({mangle: false}))
+        //.pipe(gulp.dest("./build/assets/"));
+
+
         //.pipe(liveReload(server));
         //.pipe(rename('app.js'))
         //.pipe(sourcemaps.write())

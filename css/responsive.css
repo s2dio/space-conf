@@ -31,6 +31,12 @@
     .second-logo {
         top: 255px;
     }
+    #text-opotunities {
+        top: 510px;
+    }
+    .big-sky {
+        bottom: 380px;
+    }
 }
 @media only screen and (min-width: 481px) {
     .slide > div,

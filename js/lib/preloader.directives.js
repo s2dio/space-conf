@@ -5,12 +5,19 @@ angular.module('directives.preloader', [])
             restrict: 'A',
             compile: function(element, attrs) {
                 angular.element(window).bind('load', function() {
-
-                    $("html, body").scrollTop(9000);
+                    setTimeout(function() {
+                        $('.navbar-begin').click();
+                    }, 1000);
 
                     var b = document.body.style;
                     if(b.MozTransition=='' || b.WebkitTransition=='' || b.OTransition=='' || b.transition=='') {
-                        angular.element('.preloader').hide();
+                        //$(window).scrollTop(9000);
+                        setTimeout(function() {
+                            $('.navbar-begin').click();
+                        }, 1000);
+                        setTimeout(function() {
+                            angular.element('.preloader').hide();
+                        }, 2000);
                         element.attr('class', 'loaded');
                     } else {
                         angular.element('.not-support').show();
